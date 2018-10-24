@@ -1,0 +1,24 @@
+service: warmer
+
+provider:
+  name: aws
+  runtime: go1.x
+  stage: prod
+  region: eu-west-2
+  versionFunctions: false
+  memorySize: 256
+  timeout: 240
+  environment: ${file(./config.yml):environment}
+  iamRoleStatements: ${file(./config.yml):iamRoleStatements}
+
+package:
+ exclude:
+   - ./**
+ include:
+   - ./bin/**
+
+functions:
+  warm:
+    handler: bin/warm
+    events:
+      - schedule: rate(5 minutes)

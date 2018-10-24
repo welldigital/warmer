@@ -1,0 +1,8 @@
+# Serverless directories
+.serverless
+
+# golang output binary directory
+bin
+
+# individual configuration
+config.yml
