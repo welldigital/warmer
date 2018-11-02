@@ -8,7 +8,7 @@ reflection of what end users saw.
 
 The spinner directory contains a suitable middleware handler which also returns the ID of the running Lambda, and its duration. However, you can use any endpoint.
 
-These are logged to CloudWatch in JSON format, which allows for Lambda lifespan to be measured by extracing values from the logs with CloudWatch Metric extractors.
+These are logged to CloudWatch in JSON format, which allows for Lambda lifespan to be measured by extracting values from the logs with CloudWatch Metric extractors.
 
 # Latency vs Configuration
 
